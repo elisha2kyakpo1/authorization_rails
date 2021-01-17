@@ -1,0 +1,27 @@
+
+<p id="notice"><%= notice %></p>
+
+<div>
+  <strong><%= post.userid%></strong>
+  <%= @post.body %>
+</div>
+
+<%= link_to 'Edit', edit_post_path %> |
+<%= link_to 'Back', posts_path %>
+
+<div class = "comments">
+	<h2>Read comments:</h2>
+	<% @article.comments.each do |comment| %>
+		<p><strong><%= comment.userid %></strong></p>
+		<p><%= comment.body %></p>
+	<% end %>
+</div>
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+ 
+	<p>
+    <%= f.comment %><br>
+    <%= f.text_area :body %>
+  </p>
+	<p><%= f.submit %></p>	
+<% end %>

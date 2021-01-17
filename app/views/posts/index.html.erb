@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome To My Blog App</h1>
+<div class ="article-div">
+<table class ="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr class ="tr">
+        <td><%= article.Title %></td>
+        <td><%= article.Text %></td>
+        <td><%= link_to "Show", article %></td>
+        <td><%= link_to "Edit", edit_article_path(article) %></td>
+        <td><%= link_to "Delete", article, :class => 'delete', method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</div>
+<%= link_to "New Article", new_article_path %>
+
