@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Article.find(params[:id])
+    @post = Post.find(params[:id])
 
     if @post.update(post_params)
       redirect_to @post
@@ -47,6 +47,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:article).permit(:body)
+    params.require(:post).permit(:body)
   end
 end

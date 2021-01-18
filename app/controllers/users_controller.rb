@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = Article.find(params[:id])
+    @user = Post.find(params[:id])
     @user.destroy
 
     redirect_to users_path
