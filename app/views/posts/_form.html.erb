@@ -12,18 +12,22 @@
   <% end %>
 
   <div class="fields">
-    <%
+		<%
 =begin%>
- <%= form.text_field :body, :class => 'text_form' %>
-  </div> 
+ <div class="fields">
+			<%= form.text_field :body, :class => 'text_form' %>
+		</div>  
 <%
 =end%>
 
-  <div class="fields">
-    <%= form.text_area :body, :class => 'text_form' %>
-  </div>
+		<div class="fields">
 
-  <div class="actions">
-    <%= form.submit :class => 'sub' %>
+			<%= form.label :body %><br>
+			<%= form.text_area :body, :class => 'text_form' %>
+		</div>
+
+		<div class="actions">
+		<p><%= form.submit 'Create', :class => 'sub' %></p>
+		</div>
   </div>
 <% end %>
