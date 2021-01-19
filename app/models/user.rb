@@ -5,5 +5,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :email, :username
 
   has_many :comments, through: :post
-  has_many :posts
+  has_many :posts, foreign_key: true
 end

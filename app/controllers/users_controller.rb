@@ -27,7 +27,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to articles_path
+      session[:user_id]
+      redirect_to posts_path
     else
       render :new
     end

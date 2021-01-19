@@ -3,24 +3,22 @@
 <h1>Welcome to let's chat</h1>
 <div>
 	<nav>
-		<>
+	
 	</nav>
 </div>
 <div class ="post-div">
 	<table class ="table">
 		<thead>
 			<tr>
-				<th>Title</th>
-				<th>Text</th>
-				<th colspan="3">Actions</th>
+				<th>Posted by</th>
+				<th colspan="3">Take action</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<% @posts.each do |post| %>
 				<tr class ="tr">
-					<td><%= post.Title %></td>
-					<td><%= post.Text %></td>
+					<td><%= post.body %></td>
 					<td><%= link_to "Show", post %></td>
 					<td><%= link_to "Edit", edit_post_path(post) %></td>
 					<td><%= link_to "Delete", post, :class => 'delete', method: :delete, data: { confirm: "Are you sure?" } %></td>

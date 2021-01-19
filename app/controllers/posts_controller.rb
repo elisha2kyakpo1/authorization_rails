@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :require_login, only: %i[create destroy update]
+  before_action :authorize, only: [:destroy]
+
   def index
     @posts = Post.all
   end

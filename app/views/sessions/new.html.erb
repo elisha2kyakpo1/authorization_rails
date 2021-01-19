@@ -1,26 +1,18 @@
 <div class ="signin">
-	<div>
-		<h1>Please Sign in</h1>
+  <div>
+    <h1>Please Sign in</h1>
 
-		<%= form_for @user do |form| %>
-		<% @user.errors.any? %>
-		<% @user.errors.full_messages.each do |msg| %>
-			<div class = "alert">
-				<p>
-					<%= msg %>
-				</p>
-			</div>
-		<% end %>		
-		<div class="field">
-			<div class = 'inner-div'>
-				<h2>Login</h2>
-			
-					<%= form.text_field :username, placeholder: "Username", :class => 'text' %>
+    <%= form_tag sessions_path do %>
+     <div class="field">
+      <div class = 'inner-div'>
+        <h2>Login</h2>
+      
+          <%= text_field_tag :username, nil, placeholder: "Username", :class => 'text' %>
 
-					<%= form.password_field :password, placeholder: "Password", :class => 'text' %>
-					<%= form.submit 'Sign In', :class => 'submit' %>
-				</div>
-			</div>
-		<% end %>
-	</div>
+          <%= password_field_tag :password, nil, placeholder: "Password", :class => 'text' %>
+          <%= submit_tag 'Sign In', :class => 'submit' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

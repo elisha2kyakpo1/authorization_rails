@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  belongs_to :user, foreign_key: true
-  has_many :comments, dependent: :destroy
+  belongs_to :user
+  has_many :comments, dependent: :destroy, foreign_key: true
 end
