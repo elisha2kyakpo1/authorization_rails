@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def index
-    redirect_to sessions_path
+    redirect_to root_path
   end
 
   def new
